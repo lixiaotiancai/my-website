@@ -1,0 +1,811 @@
+
+@font-face {font-family: "iconfont";
+  src:
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff')
+
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-book:before { content: "\E62C"; }
+
+.icon-movie:before { content: "\E7C4"; }
+
+.icon-qq:before { content: "\E6A0"; }
+
+.icon-config:before { content: "\E916"; }
+
+.icon-weibiao45100847:before { content: "\E642"; }
+
+.icon-email:before { content: "\E67B"; }
+
+.icon-music:before { content: "\E61F"; }
+
+.icon-tel:before { content: "\E618"; }
+
+.icon-back:before { content: "\E617"; }
+
+.icon-github:before { content: "\E712"; }
+
+.icon-search:before { content: "\E648"; }
+
+.icon-top:before { content: "\E632"; }
+
+.icon-like:before { content: "\E743"; }
+
+.icon-Gitlab:before { content: "\E87F"; }
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%; }
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  min-height: 100%; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+progress {
+  vertical-align: baseline; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  color: #333; }
+
+a:active {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  vertical-align: middle; }
+
+button,
+input,
+select {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: border-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  vertical-align: top; }
+
+optgroup {
+  font-weight: bold; }
+
+input,
+select,
+textarea,
+button {
+  outline: 0; }
+
+textarea,
+input {
+  -webkit-user-modify: read-write-plaintext-only; }
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none; }
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999; }
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999; }
+
+.placeholder {
+  color: #999; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
+  margin: 0; }
+
+ul, ol, li, dl, dd {
+  margin: 0;
+  padding: 0; }
+
+ul, ol {
+  list-style: none outside none; }
+
+h1, h2, h3 {
+  line-height: 2;
+  font-weight: normal; }
+
+h1 {
+  font-size: 18px; }
+
+h2 {
+  font-size: 16px; }
+
+h3 {
+  font-size: 14px; }
+
+i {
+  font-style: normal; }
+
+* {
+  box-sizing: border-box; }
+
+@keyframes avatarShadowShining {
+  from {
+    box-shadow: 0 0 0 5px #FFFF00;
+    -webkit-box-shadow: 0 0 0 5px #FFFF00; }
+  to {
+    box-shadow: 0 0 20px 10px #FFFF00;
+    -webkit-box-shadow: 0 0 20px 10px #FFFF00; } }
+
+#root .self-info .info-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex; }
+  #root .self-info .info-container .info-contact {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    color: #fff; }
+    #root .self-info .info-container .info-contact .info-avatar-wrapper {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px #FFFF00;
+      background: #fff;
+      overflow: hidden; }
+      #root .self-info .info-container .info-contact .info-avatar-wrapper:hover {
+        animation: avatarShadowShining 0.5s linear alternate infinite; }
+    #root .self-info .info-container .info-contact .info-name-wrapper {
+      margin-top: 12px;
+      font-size: 30px; }
+      #root .self-info .info-container .info-contact .info-name-wrapper:hover {
+        text-shadow: 2px 2px 3px #fff;
+        cursor: pointer; }
+    #root .self-info .info-container .info-contact .info-contact-wrapper {
+      margin-top: 20px;
+      font-size: 17px;
+      padding: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item {
+        line-height: 40px; }
+        #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item:hover {
+          border-radius: 5px;
+          box-shadow: 0 0 4px 3px #00FF00;
+          text-shadow: 1px 1px 2px #fff; }
+        #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item .icon {
+          font-size: 20px; }
+        #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item .contact-item-link {
+          color: #fff; }
+  #root .self-info .info-container .info-msg {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    display: flex;
+    flex-direction: column;
+    color: #f5f5f5; }
+    #root .self-info .info-container .info-msg .info-nickname-wrapper {
+      margin-top: 15%;
+      font-size: 70px;
+      display: flex;
+      justify-content: center; }
+      #root .self-info .info-container .info-msg .info-nickname-wrapper .info-name-firstname {
+        color: #FFFF00; }
+      #root .self-info .info-container .info-msg .info-nickname-wrapper .info-name-lastname {
+        color: #fff; }
+    #root .self-info .info-container .info-msg .info-slogan-wrapper {
+      height: 10%;
+      font-size: 21px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center; }
+    #root .self-info .info-container .info-msg .info-msg-wrapper {
+      height: 40%;
+      margin: auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      #root .self-info .info-container .info-msg .info-msg-wrapper .info-msg-item {
+        width: 40%;
+        height: 60px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer; }
+        #root .self-info .info-container .info-msg .info-msg-wrapper .info-msg-item:hover {
+          transform: translate(-5px, -5px);
+          text-shadow: 3px 3px 8px #000; }
+
+@media screen and (max-width: 768px) {
+  #root .self-info .info-container {
+    flex-direction: column;
+    width: 100%;
+    height: 200vh; }
+    #root .self-info .info-container .info-contact {
+      width: 100%;
+      height: 100vh; }
+      #root .self-info .info-container .info-contact .info-avatar-wrapper:active {
+        animation: avatarShadowShining 0.5s linear alternate infinite; }
+      #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item {
+        margin-top: 5%; }
+        #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item:acitve {
+          border-radius: 5px;
+          box-shadow: 0 0 4px 3px #00FF00;
+          text-shadow: 1px 1px 2px #fff; }
+    #root .self-info .info-container .info-msg {
+      width: 100%;
+      height: 100vh; }
+      #root .self-info .info-container .info-msg .info-slogan-wrapper {
+        font-size: 18px; }
+      #root .self-info .info-container .info-msg .info-msg-wrapper {
+        height: 60%;
+        justify-content: center;
+        align-items: center; }
+        #root .self-info .info-container .info-msg .info-msg-wrapper .info-msg-item {
+          width: 95%;
+          height: 8vh; }
+          #root .self-info .info-container .info-msg .info-msg-wrapper .info-msg-item:acitve {
+            transform: translate(-5px, -5px);
+            text-shadow: 3px 3px 8px #000; } }
+
+#root .self-intro .intro-container {
+  width: 100%;
+  height: 40vh;
+  min-height: 200px;
+  display: flex; }
+  #root .self-intro .intro-container .intro-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    text-align: right;
+    padding: 20px; }
+    #root .self-intro .intro-container .intro-tt-wrapper .intro-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000; }
+    #root .self-intro .intro-container .intro-tt-wrapper .intro-tt-en {
+      font-size: 25px;
+      color: #fff; }
+    #root .self-intro .intro-container .intro-tt-wrapper .intro-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D; }
+  #root .self-intro .intro-container .intro-main-wrapper {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    padding: 23px;
+    font-size: 18px;
+    color: #1E1E1E; }
+
+@media screen and (max-width: 768px) {
+  #root .self-intro .intro-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; }
+    #root .self-intro .intro-container .intro-tt-wrapper {
+      width: 100%;
+      height: 30vh;
+      background-color: #82bda4;
+      text-align: left;
+      padding-top: 15%; }
+    #root .self-intro .intro-container .intro-main-wrapper {
+      width: 100%;
+      height: 70vh;
+      background-color: #a1d7b4; } }
+
+@keyframes expItemShining {
+  from {
+    box-shadow: 0 0 0 2px #FFD700; }
+  to {
+    box-shadow: 0 0 7px 7px #FFD700; } }
+
+#root .self-exp .exp-container {
+  width: 100%;
+  height: 45vh;
+  min-height: 200px;
+  display: flex; }
+  #root .self-exp .exp-container .exp-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    text-align: right;
+    padding: 20px; }
+    #root .self-exp .exp-container .exp-tt-wrapper .exp-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000; }
+    #root .self-exp .exp-container .exp-tt-wrapper .exp-tt-en {
+      font-size: 25px;
+      color: #fff; }
+    #root .self-exp .exp-container .exp-tt-wrapper .exp-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D; }
+  #root .self-exp .exp-container .exp-main-container {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    padding: 26px;
+    font-size: 18px;
+    color: #1E1E1E;
+    position: relative; }
+    #root .self-exp .exp-container .exp-main-container .exp-main-wrapper {
+      margin-left: 10px;
+      position: relative;
+      padding-bottom: 10px;
+      cursor: pointer; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper:hover.exp-main-wrapper::before {
+        animation: expItemShining 0.5s linear alternate infinite; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-duration {
+        font-size: 18px; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-school {
+        font-size: 18px; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-introduction {
+        font-size: 16px; }
+    #root .self-exp .exp-container .exp-main-container::before {
+      content: "";
+      width: 1px;
+      height: 80%;
+      background: linear-gradient(#999 80%, transparent);
+      background: -o-linear-gradient(#999 80%, transparent);
+      background: -webkit-linear-gradient(#999 80%, transparent);
+      position: absolute;
+      top: 28px;
+      left: 16px; }
+
+@media screen and (max-width: 768px) {
+  #root .self-exp .exp-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; }
+    #root .self-exp .exp-container .exp-tt-wrapper {
+      width: 100%;
+      height: 30vh;
+      background-color: #82bda4;
+      text-align: left;
+      padding-top: 15%; }
+    #root .self-exp .exp-container .exp-main-container {
+      width: 100%;
+      height: 70vh;
+      background-color: #a1d7b4; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-exp .exp-container .exp-main-container .exp-main-wrapper:active.exp-main-wrapper::before {
+        animation: expItemShining 0.5s linear alternate infinite; } }
+
+@keyframes expBarChanging {
+  from {
+    transform: translateX(-50%) scaleX(0); }
+  100% {
+    transform: translateX(-50%) scaleX(1); } }
+
+#root .self-skill .skill-container {
+  width: 100%;
+  height: 50vh;
+  min-height: 250px;
+  display: flex; }
+  #root .self-skill .skill-container .skill-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    text-align: right;
+    padding: 20px; }
+    #root .self-skill .skill-container .skill-tt-wrapper .skill-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000; }
+    #root .self-skill .skill-container .skill-tt-wrapper .skill-tt-en {
+      font-size: 25px;
+      color: #fff; }
+    #root .self-skill .skill-container .skill-tt-wrapper .skill-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D; }
+  #root .self-skill .skill-container .skill-main-container {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    padding: 26px;
+    font-size: 18px;
+    color: #1E1E1E;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; }
+    #root .self-skill .skill-container .skill-main-container .skill-main-wrapper {
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 47%;
+      padding: 3px;
+      position: relative; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper:hover {
+        cursor: pointer;
+        transform: translate(-5px, -5px);
+        text-shadow: 3px 3px 8px #000; }
+        #root .self-skill .skill-container .skill-main-container .skill-main-wrapper:hover .skill-bar {
+          animation: expBarChanging 1s ease-out 1 forwards; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper .skill-category {
+        font-size: 20px;
+        color: #FFFF00; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper .skill-content {
+        font-size: 13px;
+        color: #f5f5f5; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper .skill-degree {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: 1px solid #f5f5f5;
+        border-radius: 10px;
+        padding: 1px 6px;
+        font-size: 5px;
+        color: #fff; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper .skill-bar-slot {
+        width: 100%;
+        height: 3px;
+        background-color: #999;
+        margin: 10px auto;
+        overflow: hidden;
+        position: relative; }
+        #root .self-skill .skill-container .skill-main-container .skill-main-wrapper .skill-bar-slot .skill-bar {
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateX(-50%);
+          background: linear-gradient(to right, #FFFF00 20%, #00FF00);
+          background: -o-linear-gradient(to right, #FFFF00 20%, #00FF00);
+          background: -webkit-linear-gradient(to right, #FFFF00 20%, #00FF00); }
+
+@media screen and (max-width: 768px) {
+  #root .self-skill .skill-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; }
+    #root .self-skill .skill-container .skill-tt-wrapper {
+      width: 100%;
+      height: 20vh;
+      background-color: #82bda4;
+      text-align: left;
+      padding-top: 10%; }
+    #root .self-skill .skill-container .skill-main-container {
+      width: 100%;
+      height: 80vh;
+      background-color: #a1d7b4;
+      padding: 0 10px;
+      justify-content: space-between; }
+      #root .self-skill .skill-container .skill-main-container .skill-main-wrapper {
+        width: 100%;
+        height: 12vh;
+        background-color: rgba(255, 255, 255, 0.2); }
+        #root .self-skill .skill-container .skill-main-container .skill-main-wrapper:active {
+          cursor: pointer;
+          transform: translate(-5px, -5px);
+          text-shadow: 3px 3px 8px #000; }
+          #root .self-skill .skill-container .skill-main-container .skill-main-wrapper:active .skill-bar {
+            animation: expBarChanging 1s ease-out 1 forwards; } }
+
+@keyframes projectItemShining {
+  from {
+    box-shadow: 0 0 0 2px #FFD700; }
+  to {
+    box-shadow: 0 0 7px 7px #FFD700; } }
+
+#root .self-project .project-container {
+  width: 100%;
+  min-height: 200px;
+  display: flex; }
+  #root .self-project .project-container .project-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    text-align: right;
+    padding: 20px; }
+    #root .self-project .project-container .project-tt-wrapper .project-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000; }
+    #root .self-project .project-container .project-tt-wrapper .project-tt-en {
+      font-size: 25px;
+      color: #fff; }
+    #root .self-project .project-container .project-tt-wrapper .project-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D; }
+  #root .self-project .project-container .project-main-container {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    padding: 26px;
+    font-size: 18px;
+    color: #1E1E1E;
+    position: relative; }
+    #root .self-project .project-container .project-main-container .project-main-wrapper {
+      margin-left: 10px;
+      position: relative;
+      padding-bottom: 10px;
+      cursor: pointer; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper:hover.project-main-wrapper::before {
+        animation: projectItemShining 0.5s linear alternate infinite; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper .project-name {
+        font-size: 18px;
+        color: #000; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper .project-intro {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #4D4D4D; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper .project-skill {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #4D4D4D; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper .project-href {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #188eee;
+        display: block; }
+        #root .self-project .project-container .project-main-container .project-main-wrapper .project-href:hover {
+          color: #FFFF00;
+          text-decoration: underline; }
+    #root .self-project .project-container .project-main-container::before {
+      content: "";
+      width: 1px;
+      height: 95%;
+      background: linear-gradient(#999 80%, transparent);
+      background: -o-linear-gradient(#999 80%, transparent);
+      background: -webkit-linear-gradient(#999 80%, transparent);
+      position: absolute;
+      top: 28px;
+      left: 16px; }
+
+@media screen and (max-width: 768px) {
+  #root .self-project .project-container {
+    flex-direction: column;
+    width: 100%; }
+    #root .self-project .project-container .project-tt-wrapper {
+      width: 100%;
+      height: 30vh;
+      background-color: #82bda4;
+      text-align: left;
+      padding-top: 15%; }
+    #root .self-project .project-container .project-main-container {
+      width: 100%;
+      background-color: #a1d7b4; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper:active.project-main-wrapper::before {
+        animation: projectItemShining 0.5s linear alternate infinite; }
+      #root .self-project .project-container .project-main-container .project-main-wrapper .project-href {
+        font-size: 12px; } }
+
+#root {
+  width: 100%; }
+  #root .self-info {
+    width: 100%; }
+  #root .self-intro {
+    width: 100%; }
+  #root .self-exp {
+    width: 100%; }
+  #root .self-skill {
+    width: 100%; }
+  #root .self-project {
+    width: 100%;
+    display: flex; }
+
+/*# sourceMappingURL=style.css.map*/

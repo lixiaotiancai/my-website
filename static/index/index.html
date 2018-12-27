@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="/lib/style/reset.css">
+    <link rel="stylesheet" href="/lib/style/common.css">
+    <link rel="stylesheet" href="/lib/style/header-footer.css">
+    <link rel="stylesheet" href="/index/css/index.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="index-header">
+        <div class="header-container">
+            <a href="/" class="header-logo-wrapper">
+                <div class="header-logo">李骁の个人小站</div>
+            </a>
+            <div class="header-tab-container">
+                <a href="/" class="header-tab-wrapper header-active">
+                    <div class="header-tab-item">首页</div>
+                </a>
+                <a href="/blog" class="header-tab-wrapper">
+                    <div class="header-tab-item">文章</div>
+                </a>
+                <a href="/project" class="header-tab-wrapper">
+                    <div class="header-tab-item">作品</div>
+                </a>
+                <a href="/about" target="_blank" class="header-tab-wrapper">
+                    <div class="header-tab-item">关于我</div>
+                </a>
+            </div>
+            <div class="header-search-container">
+                <div class="header-search-wrapper">
+                    <input type="text" class="header-search" placeholder="输入关键字搜索文章/问题" />
+                </div>
+            </div>
+            <div class="header-userinfo-container">
+                <div class="header-unlog-container">
+                    <a href="javascript:void(0)" class="header-login-wrapper">
+                        <div class="header-login">登录</div>
+                    </a>
+                    <a href="javascript:void(0)" class="header-sign-wrapper">
+                        <div class="header-sign">注册</div>
+                    </a>
+                </div>
+                <div class="header-currentuser-container hidden"></div>
+            </div>
+        </div>
+    </header>
+    <!-- 轮播 -->
+    <section id="index-banner" class="index-banner-container">
+        <div class="index-banner-wrapper">
+            <div class="banner-img-wrapper">
+            </div>
+            <div class="control-btn hidden">
+                <div class="pre-btn"></div>
+                <div class="next-btn"></div>
+            </div>
+            <div class="img-nav-bar">
+                <div class="img-nav-point-box">
+                    <div class="img-nav-point-wrapper">
+                        <div class="img-nav-point nav-point-active"></div>
+                    </div>
+                    <div class="img-nav-point-wrapper">
+                        <div class="img-nav-point"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main area -->
+    <main class="index-main-container">
+        <!-- blog -->
+        <section class="blog-container">
+            <div class="blog-header-wrapper">
+                <div class="blog-header-tt">热文</div>
+                <a href="/blog" class="blog-header-more">更多</a>
+            </div>
+            <div class="blog-content">
+                <!-- here to render hot blog item -->
+            </div>
+        </section>
+        <!-- project -->
+        <section class="project-container">
+            <div class="project-header-wrapper">
+                <div class="project-header-tt">作品</div>
+                <a href="/project" class="project-header-more">更多</a>
+            </div>
+            <div class="project-content">
+                <div class="project-item-wrapper">
+                    <a href="https://www.npmjs.com/package/lxquery" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="/index/imgs/project-lxquery.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">一款模仿jquery的个人工具函数库</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">lxQuery.js</div>
+                        </div>
+                    </a>
+                    <a href="https://lixiaotiancai.github.io/doubanPocket" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="http://imweb-io-1251594266.cos.ap-guangzhou.myqcloud.com/6842cd337d2e46f81020738301c8beb7.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">一款离线也可以使用的豆瓣应用</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">口袋豆瓣pwa</div>
+                        </div>
+                    </a>
+                    <a href="/chat_online" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="http://imweb-io-1251594266.cos.ap-guangzhou.myqcloud.com/6842cd337d2e46f81020738301c8beb7.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">基于websocket的简易在线聊天室</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">简易聊天室</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/lixiaotiancai/lxBadJS-report" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="http://imweb-io-1251594266.cos.ap-guangzhou.myqcloud.com/6842cd337d2e46f81020738301c8beb7.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">一款模仿badjs-report的监控线上异常工具</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">lxbadjs-report.js</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/lixiaotiancai/command-line-tools" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="http://imweb-io-1251594266.cos.ap-guangzhou.myqcloud.com/6842cd337d2e46f81020738301c8beb7.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">基于nodejs的命令行小工具</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">炫酷命令行工具</div>
+                        </div>
+                    </a>
+                    <a href="https://lixiaotiancai.github.io/beatPlane" target="_blank" class="project-item">
+                        <div class="item-img-wrapper">
+                            <img src="http://imweb-io-1251594266.cos.ap-guangzhou.myqcloud.com/6842cd337d2e46f81020738301c8beb7.jpg" alt="img" class="item-img" />
+                            <div class="item-intro-panel">一款打飞机类的canvas小游戏</div>
+                        </div>
+                        <div class="item-tt-wrapper">
+                            <div class="item-tt">打飞机</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- side bar -->
+        <aside class="aside-container">
+            <div class="aside-about-container aside-box">
+                <div class="about-tt-wrapper">
+                    <strong class="about-tt">关于我的个人小站</strong>
+                </div>
+                <div class="about-intro-wrapper">
+                    <div class="about-intro">网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中</div>
+                </div>
+                <div class="about-contact-container">
+                    <div class="contact-tt-wrapper">
+                        <strong class="contact-tt">联系方式</strong>
+                    </div>
+                    <div class="contact-content-wrapper">
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <!-- 尾部 -->
+    <footer></footer>
+    <script src="/lib/js/client.js"></script>
+    <script>
+        new window.__CLIENT__({
+            support: 'PC'
+        })
+    </script>
+    <script src="/lib/js/banner.js"></script>
+    <script>
+        window.__BANNERDATA__ = {
+            id: 'index-banner',
+            active: 0,
+            content: [
+            {
+                image:'http://imweb-io-1251594266.file.myqcloud.com/FqhL7QEvG58V7MsUBMksDqUS1eD1',
+                href: '/0',
+                background_color: '#fff'
+            },
+            {
+                image:'http://imweb-io-1251594266.file.myqcloud.com/Fur-czM9ZWh9PZRyQ5FdWIIEG_kV',
+                href: '/1',
+                background_color: '#fff'
+            },
+            {
+                image: 'http://imweb-io-1251594266.file.myqcloud.com/FiU6DYPjxBy4F0H8bBNDGF5viTyG',
+                href: '/2',
+                background_color: 'yellow'
+            }],
+            interval: 2000
+        }
+
+        var banner = new __BANNER__(__BANNERDATA__)
+    </script>
+    <script src="/index/js/index.js"></script>
+</body>
+</html>
