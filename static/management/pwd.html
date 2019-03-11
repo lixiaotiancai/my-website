@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>management login page</title>
+    <script>
+        (function () {
+            function getLogState () {
+                var xhr = new XMLHttpRequest()
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        var log_state = JSON.parse(xhr.responseText).is_login
+
+                        if (log_state) {
+                            window.location.href = '/management/index.html'
+                        }
+                    }
+                }
+
+                xhr.open('GET', '/management/api/get_masterinfo')
+
+                xhr.send(null)
+            }
+
+            getLogState()
+        })()
+    </script>
+    <link rel="stylesheet" href="/lib/style/reset.css">
+    <link rel="stylesheet" href="/lib/font/iconfont.css">
+    <link rel="stylesheet" href="/lib/style/common.css">
+    <link rel="stylesheet" href="/management/css/pwd.css">
+</head>
+<body>
+    <div class="management-container">
+        <div class="login-container">
+            <div class="login-header">博客后台管理登录</div>
+            <div class="login-main">
+                <input class="login-input-password" type="password" autofocus />
+                <div style="color: red;font-size: 12px;position:absolute;left: 50%;transform: translateX(-50%);">(密码: 000)</div>
+                <button class="login-submit-btn" id="login-submit-btn">登录</button>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/js/common.js"></script>
+    <script src="/management/js/user.js"></script>
+</body>
+</html>

@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>所有文章</title>
     <link rel="stylesheet" href="/lib/style/reset.css">
+    <link rel="stylesheet" href="/lib/font/iconfont.css">
     <link rel="stylesheet" href="/lib/style/common.css">
     <link rel="stylesheet" href="/lib/style/header-footer.css">
     <link rel="stylesheet" href="/blog/css/index.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
 </head>
 <body>
     <!-- 头部 -->
@@ -21,19 +23,20 @@
                 <a href="/" class="header-tab-wrapper">
                     <div class="header-tab-item">首页</div>
                 </a>
-                <a href="/blog" class="header-tab-wrapper header-active">
+                <a href="/blog" class="header-tab-wrapper  header-active" target="_blank">
                     <div class="header-tab-item">文章</div>
                 </a>
-                <a href="/project" class="header-tab-wrapper">
+                <a href="/#project" class="header-tab-wrapper">
                     <div class="header-tab-item">作品</div>
                 </a>
-                <a href="/about" class="header-tab-wrapper">
+                <a href="/about" target="_blank" class="header-tab-wrapper">
                     <div class="header-tab-item">关于我</div>
                 </a>
             </div>
             <div class="header-search-container">
                 <div class="header-search-wrapper">
-                    <input type="text" class="header-search" placeholder="输入关键字搜索文章/问题" />
+                    <input type="text" class="header-search" placeholder="搜索功能开发中..." />
+                    <span class="iconfont icon-search icon"></span>
                 </div>
             </div>
             <div class="header-userinfo-container">
@@ -62,13 +65,27 @@
                     <strong class="about-tt">关于我的个人小站</strong>
                 </div>
                 <div class="about-intro-wrapper">
-                    <div class="about-intro">网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中网站建设中</div>
+                    <div class="about-intro">欢迎来到我的个人网站(〃'▽'〃)，网站部分功能还在建设中~~~</div>
                 </div>
                 <div class="about-contact-container">
                     <div class="contact-tt-wrapper">
                         <strong class="contact-tt">联系方式</strong>
                     </div>
                     <div class="contact-content-wrapper">
+                        <div class="contact-item">
+                            <a class="contact-item-href iconfont icon-qq" href="http://wpa.qq.com/msgrd?v=3&uin=1422975258&site=qq&menu=yes" target="_blank"></a>
+                        </div>
+                        <div class="contact-item">
+                            <a class="contact-item-href iconfont icon-wechat" href="javascript:void(0)">
+                                <div class="contact-wechat"></div>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <a class="contact-item-href iconfont icon-github" href="https://github.com/lixiaotiancai" target="_blank"></a>
+                        </div>
+                        <div class="contact-item">
+                            <a class="contact-item-href iconfont icon-gitlab" href="https://git.imweb.io/users/lixiaotiancai/contributed" target="_blank"></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,15 +99,10 @@
     </main>
     <!-- 尾部 -->
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@v1.9/dist/showdown.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="/lib/js/common.js"></script>
-    <script src="/blog/js/index.js"></script>
     <script src="/lib/js/pagination.js"></script>
-    <script>
-        var __BLOG_PAGINATION__ = new __PAGINATION__({
-            id: 'blog_pagination',
-            page_total: 6, // 页面总数
-            page_show_count: 3, // 展示的连续页面
-        })
-    </script>
+    <script src="/blog/js/index.js"></script>
 </body>
 </html>

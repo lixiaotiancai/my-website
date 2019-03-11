@@ -4,7 +4,7 @@
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        var articles = JSON.parse(xhr.responseText).articles
+        var articles = JSON.parse(xhr.responseText).result.articles
 
         articles.sort(function(a, b) {
           return (b.visit || 0) - (a.visit || 0)
@@ -31,7 +31,7 @@
 
     blogHTML = '' +
       '<a class="content-img-wrapper" href="' + blogHref + articles[0].id + '">' +
-      '<div class="content-img" style="background-image:url(' + articles[0].cover + ')"></div>' +
+      '<div class="content-img" style="background-image:url(' + decodeURIComponent(decodeURIComponent(articles[0].cover)) + ')"></div>' +
       '</a>' +
       '<div class="blog-item-wrapper">' +
       '<a class="blog-item blog-active" href="' + blogHref + articles[0].id + '">' +

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer">
+    <title>management</title>
+    <script>
+        (function () {
+            function getLogState () {
+                var xhr = new XMLHttpRequest()
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        var log_state = JSON.parse(xhr.responseText).is_login
+
+                        if (!log_state) {
+                            window.location.href = '/management/pwd.html'
+                        }
+                    }
+                }
+
+                xhr.open('GET', '/management/api/get_masterinfo')
+
+                xhr.send(null)
+            }
+
+            getLogState()
+        })()
+    </script>
+    <link rel="stylesheet" href="/lib/style/reset.css">
+    <link rel="stylesheet" href="/lib/font/iconfont.css">
+    <link rel="stylesheet" href="/lib/style/common.css">
+    <link rel="stylesheet" href="/management/css/index.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+</head>
+<body>
+    <header class="management-header">
+        <div class="management-header-container">
+            <div class="management-logo-wrapper">
+                <div class="management-logo">李骁的博客后台管理系统</div>
+            </div>
+            <div class="management-logout-wrapper">
+                <a class="management-logout" href="javascript:void(0)">注销</a>
+            </div>
+        </div>
+    </header>
+    <main class="management-main">
+        <div class="management-main-sidebar">
+            <div class="tab-header-item">新建文档</div>
+            <div class="tab-header-item">文档管理</div>
+        </div>
+        <div class="management-main-content">
+            <div class="tab-body-container hidden">
+                <div class="newblog-tt-container">
+                    <input type="text" class="newblog-tt-input" placeholder="标题" />
+                </div>
+                <div class="newblog-id-container">
+                    <input type="text" class="newblog-id-input" placeholder="id" />
+                </div>
+                <div class="newblog-category-container">
+                    <select type="text" class="newblog-category-input">
+                        <option value="学习">学习</option>
+                        <option value="说说">说说</option>
+                        <option value="更新日志">更新日志</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                <div class="newblog-cover-container">
+                    <input type="text" class="newblog-cover-input" placeholder="封面图片链接" />
+                </div>
+                <div class="newblog-intro-container">
+                    <input type="text" class="newblog-intro-input" placeholder="简介" />
+                </div>
+                <div class="newblog-content-container">
+                    <div class="newblog-compose-area">
+                        <span class="newblog-content-wrapper">正文:</span>
+                        <div contenteditable="true" class="newblog-content-input"></div>
+                    </div>
+                    <div class="newblog-preview-area">
+                        <span class="newblog-preview-wrapper">预览:</span>
+                        <div class="newblog-preview"></div>
+                    </div>
+                </div>
+                <div class="newblog-submit-btn-wrapper">
+                    <button class="newblog-submit-btn">提交</button>
+                    <button class="blog-edit-btn">修改</button>
+                    <a class="blog-cancel-edit" href="/management/index.html">返回(取消修改)</a>
+                </div>
+            </div>
+            <div class="tab-body-container">
+                <div class="management-table-container">
+                    <table class="management-table" border="1">
+                        <tr class="management-table-header">
+                            <th class="table-header-item">标题</th>
+                            <th class="table-header-item">发表日期</th>
+                            <th class="table-header-item">阅读量</th>
+                            <th class="table-header-item">分类</th>
+                            <th class="table-header-item">操作</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@v1.9/dist/showdown.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script src="/lib/js/common.js"></script>
+    <script src="/management/js/user.js"></script>
+    <script src="/management/js/tab.js"></script>
+    <script>
+        var management_tab = new window.__MANAGEMENT_TAB__()
+    </script>
+    <script src="/management/js/index.js"></script>
+</body>
+</html>

@@ -79,6 +79,14 @@
     border: 1px solid #188eee;
     border-radius: 5px;
 }
+.index-header .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #999;
+}
 .index-header .header-userinfo-container {
     position: absolute;
     width: 120px;

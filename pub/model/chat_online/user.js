@@ -8,6 +8,8 @@ const UserModel = {
     let userList = []
     let options = {}
 
+    await Db.connect()
+
     return await Db.find(options, function(err, docs) {
       let userListCopy = [...userList]
 
@@ -29,8 +31,11 @@ const UserModel = {
       username: username
     }
 
+    await Db.connect()
+
     await Db.find(options, function(err, docs) {
-      len = docs.length
+      if (err)
+        len = docs.length
     })
 
     return len ? true : false
@@ -43,6 +48,8 @@ const UserModel = {
       password: password
     }
 
+    await Db.connect()
+
     await Db.find(options, function(err, docs) {
       len = docs.length
     })
@@ -50,7 +57,7 @@ const UserModel = {
     return len ? true : false
   },
 
-  setUserCookie: (username, ctx) => {
+  setUserCookie: async (username, ctx) => {
     const userkey = 'userkey_' + Math.random() * 1000
 
     ctx.cookies.set('username', username, {
@@ -100,6 +107,8 @@ const UserModel = {
       username: decodeURIComponent(username)
     }
 
+    await Db.connect()
+
     await Db.find(options, function(err, docs) {
       userDetail = docs[0]
     })
@@ -112,6 +121,8 @@ const UserModel = {
       username: username,
       password: password
     }
+
+    await Db.connect()
 
     await Db.create(options)
   }

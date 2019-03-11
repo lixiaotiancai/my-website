@@ -20,11 +20,13 @@ const Db = {
   },
 
   find: async (options, callback) => {
-    return User.find(options, callback)
+    let result = await User.find(options, callback)
+    return result
   },
 
   create: async (options, callback) => {
-    return User.create(options, callback)
+    let result = await User.create(options, callback)
+    return result
   }
 }
 

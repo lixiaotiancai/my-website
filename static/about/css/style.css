@@ -306,10 +306,10 @@ i {
     background-color: #82bda4;
     color: #fff; }
     #root .self-info .info-container .info-contact .info-avatar-wrapper {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px #FFFF00;
+      width: 200px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 0 0 2px #FFFF00;
       background: #fff;
       overflow: hidden; }
       #root .self-info .info-container .info-contact .info-avatar-wrapper:hover {
@@ -337,6 +337,13 @@ i {
           font-size: 20px; }
         #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item .contact-item-link {
           color: #fff; }
+    #root .self-info .info-container .info-contact .qr-wrapper {
+      width: 120px;
+      height: 120px;
+      margin-top: 25px; }
+      #root .self-info .info-container .info-contact .qr-wrapper .qr-img {
+        width: 100%;
+        height: 100%; }
   #root .self-info .info-container .info-msg {
     width: 60%;
     height: 100%;
@@ -394,14 +401,23 @@ i {
     #root .self-info .info-container .info-contact {
       width: 100%;
       height: 100vh; }
-      #root .self-info .info-container .info-contact .info-avatar-wrapper:active {
-        animation: avatarShadowShining 0.5s linear alternate infinite; }
+      #root .self-info .info-container .info-contact .info-avatar-wrapper {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px #FFFF00;
+        background: #fff;
+        overflow: hidden; }
+        #root .self-info .info-container .info-contact .info-avatar-wrapper:active {
+          animation: avatarShadowShining 0.5s linear alternate infinite; }
       #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item {
         margin-top: 5%; }
         #root .self-info .info-container .info-contact .info-contact-wrapper .info-contact-item:acitve {
           border-radius: 5px;
           box-shadow: 0 0 4px 3px #00FF00;
           text-shadow: 1px 1px 2px #fff; }
+      #root .self-info .info-container .info-contact .qr-wrapper {
+        display: none; }
     #root .self-info .info-container .info-msg {
       width: 100%;
       height: 100vh; }
@@ -420,7 +436,6 @@ i {
 
 #root .self-intro .intro-container {
   width: 100%;
-  height: 40vh;
   min-height: 200px;
   display: flex; }
   #root .self-intro .intro-container .intro-tt-wrapper {
@@ -453,8 +468,7 @@ i {
 @media screen and (max-width: 768px) {
   #root .self-intro .intro-container {
     flex-direction: column;
-    width: 100%;
-    height: 100vh; }
+    width: 100%; }
     #root .self-intro .intro-container .intro-tt-wrapper {
       width: 100%;
       height: 30vh;
@@ -463,7 +477,6 @@ i {
       padding-top: 15%; }
     #root .self-intro .intro-container .intro-main-wrapper {
       width: 100%;
-      height: 70vh;
       background-color: #a1d7b4; } }
 
 @keyframes expItemShining {
@@ -474,7 +487,6 @@ i {
 
 #root .self-exp .exp-container {
   width: 100%;
-  height: 45vh;
   min-height: 200px;
   display: flex; }
   #root .self-exp .exp-container .exp-tt-wrapper {
@@ -522,7 +534,9 @@ i {
       #root .self-exp .exp-container .exp-main-container .exp-main-wrapper:hover.exp-main-wrapper::before {
         animation: expItemShining 0.5s linear alternate infinite; }
       #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-duration {
-        font-size: 18px; }
+        font-size: 18px;
+        color: #FFD700;
+        text-shadow: 4px 4px 10px #000; }
       #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-school {
         font-size: 18px; }
       #root .self-exp .exp-container .exp-main-container .exp-main-wrapper .exp-introduction {
@@ -541,8 +555,7 @@ i {
 @media screen and (max-width: 768px) {
   #root .self-exp .exp-container {
     flex-direction: column;
-    width: 100%;
-    height: 100vh; }
+    width: 100%; }
     #root .self-exp .exp-container .exp-tt-wrapper {
       width: 100%;
       height: 30vh;
@@ -551,7 +564,6 @@ i {
       padding-top: 15%; }
     #root .self-exp .exp-container .exp-main-container {
       width: 100%;
-      height: 70vh;
       background-color: #a1d7b4; }
       #root .self-exp .exp-container .exp-main-container .exp-main-wrapper::before {
         content: "";
@@ -688,6 +700,120 @@ i {
   to {
     box-shadow: 0 0 7px 7px #FFD700; } }
 
+#root .self-project-next .project-container {
+  width: 100%;
+  min-height: 200px;
+  display: flex; }
+  #root .self-project-next .project-container .project-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #82bda4;
+    text-align: right;
+    padding: 20px; }
+    #root .self-project-next .project-container .project-tt-wrapper .project-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000; }
+    #root .self-project-next .project-container .project-tt-wrapper .project-tt-en {
+      font-size: 25px;
+      color: #fff; }
+    #root .self-project-next .project-container .project-tt-wrapper .project-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D; }
+  #root .self-project-next .project-container .project-main-container {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: #a1d7b4;
+    padding: 26px;
+    font-size: 18px;
+    color: #1E1E1E;
+    position: relative; }
+    #root .self-project-next .project-container .project-main-container .project-main-wrapper {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      position: relative;
+      padding-bottom: 10px;
+      cursor: pointer; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper:hover.project-main-wrapper::before {
+        animation: projectItemShining 0.5s linear alternate infinite; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-name {
+        font-size: 18px;
+        color: #FFFF00;
+        text-shadow: 2px 2px 5px #000; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-intro {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #4D4D4D; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-skill {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #4D4D4D; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-href {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #188eee;
+        display: block; }
+        #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-href:hover {
+          color: #FFFF00;
+          text-decoration: underline; }
+    #root .self-project-next .project-container .project-main-container::before {
+      content: "";
+      width: 1px;
+      height: 95%;
+      background: linear-gradient(#999 80%, transparent);
+      background: -o-linear-gradient(#999 80%, transparent);
+      background: -webkit-linear-gradient(#999 80%, transparent);
+      position: absolute;
+      top: 28px;
+      left: 16px; }
+
+@media screen and (max-width: 768px) {
+  #root .self-project-next .project-container {
+    flex-direction: column;
+    width: 100%; }
+    #root .self-project-next .project-container .project-tt-wrapper {
+      width: 100%;
+      height: 30vh;
+      background-color: #82bda4;
+      text-align: left;
+      padding-top: 15%; }
+    #root .self-project-next .project-container .project-main-container {
+      width: 100%;
+      background-color: #a1d7b4; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper:active.project-main-wrapper::before {
+        animation: projectItemShining 0.5s linear alternate infinite; }
+      #root .self-project-next .project-container .project-main-container .project-main-wrapper .project-href {
+        font-size: 12px; } }
+
+@keyframes projectItemShining {
+  from {
+    box-shadow: 0 0 0 2px #FFD700; }
+  to {
+    box-shadow: 0 0 7px 7px #FFD700; } }
+
 #root .self-project .project-container {
   width: 100%;
   min-height: 200px;
@@ -696,7 +822,7 @@ i {
     width: 40%;
     height: 100%;
     background: url("http://coding.imweb.io/img/project/resume/bg.png");
-    background-color: #82bda4;
+    background-color: #a1d7b4;
     text-align: right;
     padding: 20px; }
     #root .self-project .project-container .project-tt-wrapper .project-tt {
@@ -714,13 +840,14 @@ i {
     width: 60%;
     height: 100%;
     background: url("http://coding.imweb.io/img/project/resume/bg.png");
-    background-color: #a1d7b4;
+    background-color: #82bda4;
     padding: 26px;
     font-size: 18px;
     color: #1E1E1E;
     position: relative; }
     #root .self-project .project-container .project-main-container .project-main-wrapper {
       margin-left: 10px;
+      margin-bottom: 10px;
       position: relative;
       padding-bottom: 10px;
       cursor: pointer; }
@@ -738,7 +865,8 @@ i {
         animation: projectItemShining 0.5s linear alternate infinite; }
       #root .self-project .project-container .project-main-container .project-main-wrapper .project-name {
         font-size: 18px;
-        color: #000; }
+        color: #FFFF00;
+        text-shadow: 2px 2px 5px #000; }
       #root .self-project .project-container .project-main-container .project-main-wrapper .project-intro {
         margin-top: 10px;
         font-size: 16px;
@@ -799,11 +927,16 @@ i {
   #root .self-info {
     width: 100%; }
   #root .self-intro {
-    width: 100%; }
+    width: 100%;
+    display: flex; }
   #root .self-exp {
-    width: 100%; }
+    width: 100%;
+    display: flex; }
   #root .self-skill {
     width: 100%; }
+  #root .self-project-next {
+    width: 100%;
+    display: flex; }
   #root .self-project {
     width: 100%;
     display: flex; }

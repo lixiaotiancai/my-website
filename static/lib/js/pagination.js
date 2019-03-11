@@ -24,7 +24,7 @@
   function Pagination(opt) {
     var config = {
       id: '',
-      item_per_page: 5, // 每页展示的条目数
+      item_per_page: 3, // 每页展示的条目数
       page_total: 10, // 页面总数
       page_show_count: 3, // 展示的连续页面
     }
@@ -126,7 +126,7 @@
       startNum = total - count + 1
       endNum = total
     } else {
-      console.log('config error...')
+      // console.log('config error...')
     }
 
     var nodeList = this.nodeList = []

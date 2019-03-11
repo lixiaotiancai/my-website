@@ -10,12 +10,19 @@
   var blogContainer = T.qS('.blog-container')
   var fragment = document.createDocumentFragment()
 
+  function markdown2html(content) {
+    var converter = new showdown.Converter()
+    var html = converter.makeHtml(content)
+
+    return html
+  }
+
   function render(article) {
     var id = article.id
     var title = article.title
     var time = COMMON.formateDate('YYYY年MM月DD日', article.date)
     var visit = article.visit
-    var content = article.content
+    var content = markdown2html(decodeURIComponent(decodeURIComponent(article.content)))
 
     var blogItem = T.cE('div')
     blogItem.classList.add('blog-item-wrapper')
@@ -36,7 +43,7 @@
       '<div class="blog-item-content">' + content + '</div>' +
       '</div>' +
       '<div class="blog-item-footer">' +
-      '<a href="' + blogHref + '" class="blog-item-more">查看全文</a>' +
+      '<a href="' + blogHref + '" class="blog-item-more">[ 查看全文 ]</a>' +
       '</div>'
 
     blogItem.innerHTML = renderHTML
@@ -49,11 +56,22 @@
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
-        var articles = JSON.parse(xhr.responseText).articles || []
+        var articles = JSON.parse(xhr.responseText).result.articles || []
+        var article_total = JSON.parse(xhr.responseText).result.total
+
+        // 动态生成分页器
+        var __BLOG_PAGINATION__ = new __PAGINATION__({
+          id: 'blog_pagination',
+          page_show_count: 3,
+          page_total: Math.ceil(article_total / 3)
+        })
+
         var len = articles.length
 
         for (var i = 0; i < len; i++) {
-          render(articles[i])
+          if (articles[i]) {
+            render(articles[i])
+          }
         }
 
         blogContainer.innerHTML = ''

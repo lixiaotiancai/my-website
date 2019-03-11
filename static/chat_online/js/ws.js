@@ -1,5 +1,5 @@
 (function() {
-  var ws_url = 'ws://localhost:3000/chat_online?' + 'username=' + COMMON.getCookieItem('username')
+  var ws_url = 'ws://39.108.226.142/chat_online?' + 'username=' + COMMON.getCookieItem('username')
   var ws = new WebSocket(ws_url)
 
   ws.onopen = function() {

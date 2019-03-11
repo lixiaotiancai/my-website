@@ -8,7 +8,7 @@ router.post('/login', async ctx => {
   let password = postData.password
 
   if (await userModel.isSystemUser(username, password)) {
-    userModel.setUserCookie(encodeURIComponent(username), ctx)
+    await userModel.setUserCookie(encodeURIComponent(username), ctx)
 
     ctx.body = {
       success: true,

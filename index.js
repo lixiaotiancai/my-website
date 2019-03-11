@@ -2,7 +2,6 @@ const Koa = require('koa');
 const fs = require('fs');
 const path = require('path');
 const url = require('url')
-const db = require('./pub/model/chat_online/db')
 const util = require('./pub/util/index')
 const router = require('./routers/index');
 const bodyParser = require('koa-bodyparser');
@@ -18,16 +17,17 @@ const WebSocket = require('ws')
 
 const app = new Koa()
 
-let server = app.listen(3000)
+let server = app.listen(80)
 
 const chat_online_wss = new WebSocket.Server({
   noServer: true
 })
 
-app.use(async (ctx, next) => {
-  await db.connect()
-  await next()
-})
+// app.use(async (ctx, next) => {
+//   await chat_online_db.connect()
+
+//   await next()
+// })
 
 const user_online = [] // 在线用户列表
 let notify = "" // 公告
@@ -161,7 +161,7 @@ app.use(async (ctx, next) => {
     await send(ctx, ctx.path, {
       root: path.join(__dirname, staticPath),
       index: 'index.html',
-      maxage: 24 * 60 * 60 * 1000, // 强缓存1小时
+      maxage: 60 * 60 * 1000, // 强缓存1小时
       setHeaders: (res, path, stats) => {
         // res.setHeader('Last-Modified', stats.mtime.toUTCString())
         res.setHeader('Etag', etag(stats))
@@ -174,7 +174,7 @@ app.use(async (ctx, next) => {
       await send(ctx, ctx.path, {
         root: path.join(__dirname, staticPath),
         index: 'index.html',
-        maxage: 24 * 60 * 60 * 1000, // 强缓存1小时
+        maxage: 60 * 60 * 1000, // 强缓存1小时
         setHeaders: (res, path, stats) => {
           // res.setHeader('Last-Modified', stats.mtime.toUTCString())
           res.setHeader('Etag', etag(stats))
@@ -193,4 +193,4 @@ app.use(async (ctx, next) => {
 
 
 
-console.log('app started at port 3000...')
+console.log('app started at port 80...')
