@@ -46,6 +46,7 @@ body {
     width: 200px;
     background-color: #f3f3f3;
     border: 1px solid #fff;
+    flex: 0 0 auto;
 }
 .management-main-sidebar .tab-header-item {
     width: 100%;
@@ -64,8 +65,8 @@ body {
     background-color: #c4c4c4;
 }
 .management-main-content {
-    flex: 1 0 auto;
     background: #fff;
+    flex: 1 1 auto;
 }
 .tab-body-container {
     width: 100%;

@@ -60,6 +60,10 @@
     blogBox.innerHTML = blogHTML
     blogContent.innerHTML = ''
     blogContent.appendChild(blogBox)
+
+    if (document.querySelector('.point-loading')) {
+      document.querySelector('.point-loading').style.display = 'none'
+    }
   }
 
   ajaxHotAritcleRequest()

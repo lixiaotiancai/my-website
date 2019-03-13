@@ -15,6 +15,16 @@
     display: none;
   }
 }
+@keyframes pointLoading {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.3);
+        opacity: 0.5;
+    }
+}
 
 body {
   min-width: 1000px;
@@ -333,4 +343,65 @@ pre code {
     top: -2px;
     transform: rotate(45deg) translateX(-10px);
     background: #fff;
+}
+
+/* loading */
+.point-loading {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.point-loading .point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: lightblue;
+    position: absolute;
+    animation: pointLoading 1s  infinite;
+}
+.point-loading .point:nth-child(1) {
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    animation-delay: 0.13s;
+}
+.point-loading .point:nth-child(2) {
+    left: 14px;
+    top: 14px;
+    animation-delay: 0.26s;
+}
+.point-loading .point:nth-child(3) {
+    left: 50%;
+    top: 0;
+    margin-left: -10px;
+    animation-delay: 0.39s;
+}
+.point-loading .point:nth-child(4) {
+    top: 14px;
+    right: 14px;
+    animation-delay: 0.52s;
+}
+.point-loading .point:nth-child(5) {
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    animation-delay: 0.65s;
+}
+.point-loading .point:nth-child(6) {
+    right: 14px;
+    bottom: 14px;
+    animation-delay: 0.78s;
+}
+.point-loading .point:nth-child(7) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+    animation-delay: 0.91s;
+}
+.point-loading .point:nth-child(8) {
+    bottom: 14px;
+    left: 14px;
+    animation-delay: 1.04s;
 }

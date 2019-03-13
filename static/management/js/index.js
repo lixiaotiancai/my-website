@@ -33,9 +33,9 @@
         var visit = detail.visit
         var date = detail.date
         var category = detail.category
-        var cover = decodeURIComponent(decodeURIComponent(detail.cover))
+        var cover = decodeURIComponent(detail.cover)
         var intro = detail.intro
-        var content = decodeURIComponent(decodeURIComponent(detail.content))
+        var content = decodeURIComponent(detail.content)
         window.__DATA_BASE_ID__ = detail._id
 
         COMMON.qS('.newblog-tt-input').value = title
@@ -193,6 +193,11 @@
         '</td>'
 
       tr.innerHTML = trHTML
+
+      if (COMMON.qS('.loading')) {
+        COMMON.qS('.loading').style.display = 'none'
+      }
+
       table.appendChild(tr)
     }
   }

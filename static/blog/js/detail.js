@@ -10,6 +10,12 @@
     return html
   }
 
+  function codeHighLight() {
+    COMMON.qSA('pre').forEach(function(block) {
+      hljs.highlightBlock(block)
+    })
+  }
+
   function addVisitCount(id, visit) {
     var options = {
       id: id
@@ -31,9 +37,9 @@
   function render(detail) {
     var id = detail[1].id || ''
     var title = detail[1].title || ''
-    var time = COMMON.formateDate('YYYY年MM月DD日', detail[1].date)
+    var time = COMMON.formateDate('YYYY年MM月DD日 hh点mm分', detail[1].date)
     var visit = detail[1].visit + 1
-    var content = markdown2html(decodeURIComponent(decodeURIComponent(detail[1].content))) || ''
+    var content = markdown2html(decodeURIComponent(detail[1].content)) || ''
     var pre_title = detail[0] ? detail[0].title : '没有了'
     var pre_href = detail[0] ? ('/blog/detail.html?id=' + detail[0].id) : 'javascript:void(0)'
     var next_title = detail[2] ? detail[2].title : '没有了'
@@ -61,7 +67,14 @@
       '</div>'
 
     articleBox.innerHTML = articleHTML
+
+    if (COMMON.qS('.point-loading')) {
+      COMMON.qS('.point-loading').style.display = 'none'
+    }
+
     articleContainer.appendChild(articleBox)
+
+    codeHighLight()
   }
 
   function ajaxArticleRequest(id) {

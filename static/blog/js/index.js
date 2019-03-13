@@ -17,12 +17,18 @@
     return html
   }
 
+  function codeHighLight() {
+    COMMON.qSA('pre').forEach(function(block) {
+      hljs.highlightBlock(block)
+    })
+  }
+
   function render(article) {
     var id = article.id
     var title = article.title
-    var time = COMMON.formateDate('YYYY年MM月DD日', article.date)
+    var time = COMMON.formateDate('YYYY年MM月DD日 hh点mm分', article.date)
     var visit = article.visit
-    var content = markdown2html(decodeURIComponent(decodeURIComponent(article.content)))
+    var content = markdown2html(decodeURIComponent(article.content))
 
     var blogItem = T.cE('div')
     blogItem.classList.add('blog-item-wrapper')
@@ -48,7 +54,13 @@
 
     blogItem.innerHTML = renderHTML
 
+    if (COMMON.qS('.point-loading')) {
+      COMMON.qS('.point-loading').style.display = 'none'
+    }
+
     fragment.appendChild(blogItem)
+
+    codeHighLight()
   }
 
   function blogAjaxRequest(start, count) {
@@ -63,7 +75,7 @@
         var __BLOG_PAGINATION__ = new __PAGINATION__({
           id: 'blog_pagination',
           page_show_count: 3,
-          page_total: Math.ceil(article_total / 3)
+          page_total: Math.ceil(article_total / 4)
         })
 
         var len = articles.length
@@ -85,7 +97,7 @@
   }
 
   var page = +COMMON.getUrlParam('page') || 1
-  var count = 3
+  var count = 4
   var start = (page - 1) * count
 
   blogAjaxRequest(start, count)
