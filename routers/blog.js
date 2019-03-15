@@ -11,22 +11,7 @@ router.get('/test_api', async ctx => {
   }
 })
 
-/**
- * blog test api
- */
-router.get('/test_get_article', async ctx => {
-  await db.connect()
-
-  let articles = await articleModel.testGetArticle()
-
-  ctx.body = {
-    success: true,
-    retcode: 0,
-    articles: articles
-  }
-})
-
-router.post('/test_post_article', async ctx => {
+router.post('/post_article', async ctx => {
   await db.connect()
 
   const postData = ctx.request.body
@@ -37,7 +22,7 @@ router.post('/test_post_article', async ctx => {
     retcode: 0
   }
 
-  await articleModel.testPostArticle(options)
+  await articleModel.postArticle(options)
 })
 
 
@@ -59,6 +44,25 @@ router.get('/get_articles', async (ctx) => {
     result: result
   }
 })
+
+/**
+ * 获取热门文章
+ */
+router.get('/get_hot_articles', async ctx => {
+  await db.connect()
+  const hotnum = +ctx.query.hotnum || 0
+  let hot_articles = []
+
+  while (!hot_articles.length) {
+    hot_articles = await articleModel.getHotArticles(hotnum)
+  }
+
+  ctx.body = {
+    success: true,
+    hot_articles: hot_articles
+  }
+})
+
 
 /**
  * 获取文章详情

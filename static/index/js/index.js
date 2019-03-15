@@ -4,17 +4,13 @@
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        var articles = JSON.parse(xhr.responseText).result.articles
-
-        articles.sort(function(a, b) {
-          return (b.visit || 0) - (a.visit || 0)
-        })
+        var articles = JSON.parse(xhr.responseText).hot_articles
 
         render(articles)
       }
     }
 
-    xhr.open('GET', '/blog/api/get_articles?start=0')
+    xhr.open('GET', '/blog/api/get_hot_articles?hotnum=5')
 
     xhr.send(null)
   }

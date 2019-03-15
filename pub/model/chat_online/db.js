@@ -10,7 +10,7 @@ let User = mongoose.model('users', userSchema)
 
 const Db = {
   connect: async () => {
-    mongoose.connect(`${config.host}:${config.port}/${config.db}`, {
+    await mongoose.connect(`${config.host}:${config.port}/${config.db}`, {
       useNewUrlParser: true
     })
   },

@@ -1,4 +1,12 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Resume</title><link rel="shortcut icon" href="https://9.url.cn/edu/node_modules/@tencent/im-edu-ui/img/nohash/favicon.ico"><style>.loading {
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Resume</title><link rel="shortcut icon" href="https://9.url.cn/edu/node_modules/@tencent/im-edu-ui/img/nohash/favicon.ico"><style>@keyframes loadingAnimation {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+    .loading {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -7,4 +15,42 @@
         color: #FFFF00;
         font-size: 100px;
         background-color: rgb(161,215,180);
-    }</style><link href="/about/css/style.css" rel="stylesheet"></head><body><section class="loading"><div>loading...</div></section><main id="root"></main><script type="text/javascript" src="/about/js/bundle.js"></script></body></html>
+    }
+    .loading span {
+        animation: loadingAnimation 0.9s infinite
+    }
+    .loading span:nth-child(1) {
+        animation-delay: 0.1s
+    }
+    .loading span:nth-child(2) {
+        animation-delay: 0.2s
+    }
+    .loading span:nth-child(3) {
+        animation-delay: 0.3s
+    }
+    .loading span:nth-child(4) {
+        animation-delay: 0.4s
+    }
+    .loading span:nth-child(5) {
+        animation-delay: 0.5s
+    }
+    .loading span:nth-child(6) {
+        animation-delay: 0.6s
+    }
+    .loading span:nth-child(7) {
+        animation-delay: 0.7s
+    }
+    .loading span:nth-child(8) {
+        animation-delay: 0.8s
+    }
+    .loading span:nth-child(9) {
+        animation-delay: 0.9s
+    }
+    .loading span:nth-child(10) {
+        animation-delay: 1.0s
+    }
+    @media screen and (max-width: 768px) {
+        .loading {
+            font-size: 50px;
+        }
+    }</style><link href="/about/css/style.css" rel="stylesheet"></head><body><section class="loading"><span>L</span> <span>o</span> <span>a</span> <span>d</span> <span>i</span> <span>n</span> <span>g</span> <span>.</span> <span>.</span> <span>.</span></section><main id="root"></main><script type="text/javascript" src="/about/js/bundle.js"></script></body></html>

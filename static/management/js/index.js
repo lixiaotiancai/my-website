@@ -80,7 +80,7 @@
       }
     }
 
-    xhr.open('POST', '/blog/api/test_post_article')
+    xhr.open('POST', '/blog/api/post_article')
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 

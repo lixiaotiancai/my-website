@@ -5,33 +5,6 @@ let articles = require('../../mocks/blog_mocks')
 let Db = require('./db')
 
 const ArticleModel = {
-  // getArticles: (start = 0, count) => {
-  //   let len = articles.length
-  //   let result = []
-
-  //   if (!count) {
-  //     for (let i = start; i < len; i++) {
-  //       result.push(articles[i])
-  //     }
-
-  //     return result
-  //   }
-
-  //   for (let i = start; i < start + count; i++) {
-  //     result.push(articles[i])
-  //   }
-
-  //   return result
-  // },
-
-  // getArticleById: (id) => {
-  //   let len = articles.length
-
-  //   for (let i = 0; i < len; i++) {
-  //     if (articles[i].id === id) return articles[i]
-  //   }
-  // },
-
   getArticles: async (start = 0, count) => {
     let result = []
     let ret = {}
@@ -61,6 +34,20 @@ const ArticleModel = {
     return ret
   },
 
+  getHotArticles: async hotnum => {
+    let result
+
+    await Db.find({}, function(err, docs) {
+      let articles = [].slice.call(docs)
+
+      result = articles.sort(function(a, b) {
+        return (b.visit || 0) - (a.visit || 0)
+      }).slice(0, hotnum)
+    })
+
+    return result
+  },
+
   getArticleById: async (id) => {
     let result
 
@@ -77,21 +64,11 @@ const ArticleModel = {
 
     return result
   },
-  // test
-  testGetArticle: async () => {
-    let article
 
-    await Db.find({}, function(err, docs) {
-      article = docs
-    })
-
-    return article
-  },
-
-  testPostArticle: async opts => {
+  postArticle: async opts => {
     let opt = JSON.parse(opts)
     let options = {
-      id: 0,
+      id: '???',
       visit: 0,
       date: +new Date(),
       title: '???',

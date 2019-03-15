@@ -12742,7 +12742,7 @@
           avatar_mobile: '/about/images/avatar_mobile.jpg',
           slogan: '念经(coding) 参禅(thinking) 化缘(searching)',
           sex: '男',
-          age: 24,
+          age: 25,
           edu: '硕士',
           grade: '研二',
           graduate: '大连海事大学',
@@ -12755,17 +12755,17 @@
           }
         },
         selfIntro: {
-          content: '最早迈入计算机领域是在高中时期，使用编程语言为pascal，参加全国青少年信息学奥林匹克竞赛(noip)获省三等奖，积累了一定数据结构与算法的基础。<br><br>本科为非计算机专业，但凭借着强自学能力和毅力，自学了本科计算机专业的重点课程，并以一个三跨考生的姿态成功考入武汉大学计算机技术专业。<br><br>读研期间接触并深深爱上了前端开发，决心在前端开发领域闯出一片天地。从接触前端到现在有一年时间，熟悉前端开发领域相关技能及知识，(<span style="color: #c00">new!!</span>在前端方面获得的认可有腾讯NEXT前端特训班优秀学员、考有腾讯NEXT学位证书)。平时接触最多的是pc端开发，对移动端开发，微信公众号，微信小程序有一定的了解。自学能力强，能吃苦，有钻研精神，擅长帮助他人，有一定的领导能力，做事能以高标准严格要求自己，喜欢研究新鲜技术及事物。'
+          content: '最早迈入计算机领域是在高中时期，使用编程语言为pascal，参加全国青少年信息学奥林匹克竞赛(noip)获省三等奖，积累了一定数据结构与算法的基础。<br><br>本科为非计算机专业，但凭借着强自学能力和毅力，自学了本科计算机专业的重点课程，并以一个三跨考生的姿态成功考入武汉大学计算机技术专业。<br><br>读研期间接触并深深爱上了前端开发，决心在前端开发领域闯出一片天地。从接触前端到现在将近两年时间，熟悉前端开发领域相关技能及知识，(<span style="color: #c00">new!!</span>在前端方面获得的认可有腾讯NEXT前端特训班优秀学员、考有腾讯NEXT学位证书)。平时接触最多的是pc端开发，对移动端开发，微信公众号，微信小程序有一定的了解。自学能力强，能吃苦，有钻研精神，擅长帮助他人，有一定的领导能力，做事能以高标准严格要求自己，喜欢研究新鲜技术及事物。'
         },
         selfExp: {
           content: [{
-            duration: '2012-2017',
+            duration: '2012-2016',
             school: '大连海事大学(211)',
-            introduction: '本科专业为航海技术，因为想改变自己的生活，又热衷于计算机，于是下定决心考研。自学了数据结构、计算机组成原理、操作系统、计算机网络、软件工程等计算机本科专业课程。并考下了计算机等级考试三级(网络技术)证书。虽然我本科为非计算机专业出身，但是通过闲暇时间学习计算机知识锻炼了我更强的自学能力，坚持不懈的毅力以及超乎常人的抗压能力。考研成功无疑给予了我更大的信心，当我和其他计算机本科专业的同学坐在同一个实验室时，我感觉自己不比任何人差。'
+            introduction: '本科专业为航海技术，因为想改变自己的生活，又热衷于计算机，于是下定决心考研。自学了数据结构、计算机组成原理、操作系统、计算机网络、软件工程等计算机本科专业课程。并考下了计算机等级考试三级(网络技术)证书。虽然我本科为非计算机专业出身，但是通过闲暇时间学习计算机知识锻炼了我更强的自学能力，坚持不懈的毅力以及超乎常人的抗压能力。考研成功无疑给予了我更大的信心，当我和其他计算机本科专业的同学坐在同一个实验室时，我感觉自己不比任何人差！'
           }, {
             duration: '2017-至今',
             school: '武汉大学(985)',
-            introduction: '武汉大学计算机技术专业。开设课程有数据挖掘，计算机软件能力认证(csp)，多媒体技术，人工智能，高级软件工程，嵌入式系统开发，信息系统安全，移动开发等。闲暇时大多时间会在实验室，一面帮助导师完成一些前端相关的任务，比如做一个演示app、微信公众号开发、微信小程序开发、完成一些前后端交互等，一面学习前端相关知识。除了前端开发，还自学了人工智能，对深度学习、神经网络有一个基本的认识，并考有udacity深度学习学位的毕业证书。我认为读研的收获，除了拓展了计算机领域知识，相识了前端开发，更重要的是磨练了我刻苦钻研问题的精神，在学习的路上一定会遇到很多的坑，很多的问题，而我都会迎难而上，彻底去搞懂问题，从而脚踏实地的一步步学习，成长。'
+            introduction: '武汉大学计算机技术专业。开设课程有数据挖掘，信息系统安全，计算机软件能力认证(csp)，多媒体技术，人工智能，高级软件工程，嵌入式系统开发，信息系统安全，移动开发等。闲暇时大多时间会在实验室，一面学习学业要求的课程，一面学习前端相关知识。除了前端开发，还自学了人工智能，对深度学习、神经网络有一个基本的认识，并考有udacity深度学习学位的毕业证书。我认为读研的收获，除了拓展了计算机领域知识，相识了前端开发，更重要的是磨练了我刻苦钻研问题的精神，在学习的路上一定会遇到很多的坑，很多的问题，而我都会迎难而上，彻底去搞懂问题，从而脚踏实地的一步步学习，成长。'
           }]
         },
         selfSkill: {
@@ -12804,7 +12804,7 @@
         selfProjectNext: {
           content: [{
             projectName: '炫酷的命令行小工具',
-            projectIntro: '接触到的关于next学位的第一个小项目，使用nodejs制作的命令行小工具，通过process.argv来接受命令行的指令参数来完成各式各样的小功能。支持彩色文字滚动，日期查询，天气查询，发送邮件等趣味的小功能，该小项目曾获得前端NEXT特训班优秀学员称号~',
+            projectIntro: '接触到的关于next学位的第一个小项目，使用nodejs制作的命令行小工具，通过process.argv来接受命令行的指令参数来完成各式各样的小功能。支持彩色文字滚动，日期查询，天气查询，发送邮件等趣味的小功能。该小项目获得了前端NEXT特训班优秀学员称号，这大大增加了我对前端开发的兴趣以及信心，只要我想，没有什么是办不到的！',
             projectSkillStack: 'nodejs commonjs npm 模块化',
             projectCodeLink: 'https://github.com/lixiaotiancai/command-line-tools',
             projectOnline: 'https://github.com/lixiaotiancai/command-line-tools'
@@ -12823,12 +12823,12 @@
           }, {
             projectName: '口袋豆瓣PWA',
             projectIntro: '基于react的豆瓣应用，经历过两次比较大的升级。第一次是在老师的指导下，将组件划分为了展示组件与容器组件，使得组件更易被复用、维护，逻辑更清晰，同时使用了redux与react-router使得组件的状态更易被管理，使用了css预编译sass使得css具备了组件化的特点，且css开发效率更高。第二次升级是因为对近年来前端的热点之一pwa应用产生了浓厚兴趣，所以自学了pwa应用的一些相关知识从而对该应用进行了pwa升级，具备了离线，通知，可添加app图标至桌面的特点。',
-            projectSkillStack: '组件化 react redux react-router scss webpack es6 跨域(jsonp) PWA(service worker, web notification, manifest.json)',
+            projectSkillStack: '组件设计 react redux react-router scss webpack es6 跨域(jsonp) PWA(service worker, web notification, manifest.json)',
             projectCodeLink: 'https://github.com/lixiaotiancai/doubanPocketPWA',
             projectOnline: 'https://lixiaotiancai.github.io/doubanPocket/#/'
           }, {
             projectName: '我的个人函数工具库lxQuery.js',
-            projectIntro: '对我个人来说在next学位的项目中难度系数最高的项目。为了完成此项目，我阅读了以jquery为首，还有一些不知名函数库的源码，从中学到很多，例如算法技巧、设计思想、目录结构等，并将这些统统应用于我的个人函数库中。同时我的个人函数库也封装了对ajax，跨域，dom操作，正则，异步，promise，本地存储，cookie，高级计时器等相关知识的运用。单元测试用的是jest，最后发布到了npm社区。',
+            projectIntro: '造轮子！对我个人来说在next学位的项目中难度系数最高的项目。为了完成此项目，我阅读了以jquery为首，还有一些不知名函数库的源码，从中学到很多，例如算法技巧、设计思想、目录结构等，并将这些统统应用于我的个人函数库中。同时我的个人函数库也封装了对ajax，跨域，dom操作，正则，异步，promise，本地存储，cookie，高级计时器等相关知识的运用。单元测试用的是jest，最后发布到了npm社区。',
             projectSkillStack: 'es6 webpack 设计模式 模块化 模块测试(jest) npm ',
             projectCodeLink: 'https://github.com/lixiaotiancai/lxQuery',
             projectOnline: 'https://www.npmjs.com/package/lxquery'
@@ -12843,13 +12843,13 @@
         selfProject: {
           content: [{
             projectName: '我的个人网站',
-            projectIntro: '自己独立搭建的个人网站，网站目前还在建设中。服务器采用的阿里云ECS，操作系统为linux，后台采用koa搭建，前端使用的为ES5原生js，采用flex布局，前后端使用ajax进行交互，尚未使用数据库，数据由mock data模拟提供。(<span style="color: #c00">new!</span>博客后台管理系统已搭建完成!网站博客数据全部由模拟数据转换为数据库数据！)',
+            projectIntro: '自己独立搭建的个人网站，网站目前还在建设中。服务器采用的阿里云ECS，操作系统为linux，后台采用koa搭建，前端使用的为ES5原生js，采用flex布局，前后端使用ajax进行交互，尚未使用数据库，数据由mock data模拟提供。(<span style="color: #c00">new!</span>博客后台管理系统已搭建完成!网站博客数据全部由模拟数据转换为数据库数据！)，通过从前端到后端完全独立对网站的搭建，对整个前端体系，前后端的交互，网站的维护与优化等方面都有了一个崭新和较为全面的认识。',
             projectSkillStack: '服务器搭建 linux koa ajax 组件 接口设计 缓存策略 前端性能优化 整站设计 mongodb',
             projectCodeLink: 'https://github.com/lixiaotiancai/my-website',
             projectOnline: 'http://39.108.226.142'
           }, {
             projectName: '简易在线聊天室',
-            projectIntro: '自学websocket与mongodb后独立完成的小作品，支持用户登录注册与登出，支持实时聊天，发布公告。',
+            projectIntro: '自学websocket与mongodb后独立完成的小作品，支持用户登录注册与登出，支持实时聊天，发布公告。在网站中经常会看到各式各样的实时聊天平台，比如客服对话框、实时聊天框、实时弹幕，再或者实时更新的动态数据，比如股票网站等。通过这个小项目，对以上组件或者系统的工作原理有了进一步的认识。',
             projectSkillStack: 'websocket koa mongodb cookie',
             projectCodeLink: 'https://github.com/lixiaotiancai/chat_online',
             projectOnline: 'http://39.108.226.142/chat_online'
@@ -12861,14 +12861,14 @@
             projectOnline: 'http://39.108.226.142/lxbadjs-demo'
           }, {
             projectName: '简历模板',
-            projectIntro: '基于next学位响应式简历项目升级改造。万能简历模板，只需更改配置项就能生成不同的简历，该项目深受react启发，将简历不同板块以组件的形式一个个渲染至根节点，最后生成完整简历，并支持响应式，针对其白屏时间过长问题用loading图的形式给予解决。',
-            projectSkillStack: 'es6 webpack 响应式 flex布局 sass 组件化 原型',
+            projectIntro: '基于next学位响应式简历项目升级改造。万能简历模板，只需更改配置项就能生成不同的简历，该项目深受react启发，将简历不同板块以组件的形式一个个渲染至根节点，最后生成完整简历，并支持响应式，针对其白屏时间过长问题采用loading图的形式给予解决。',
+            projectSkillStack: 'es6 webpack 响应式 flex布局 sass 组件化 原型 白屏优化',
             projectCodeLink: 'https://github.com/lixiaotiancai/resume-template',
             projectOnline: 'http://39.108.226.142/about'
           }, {
             projectName: '网站博客管理后台',
-            projectIntro: '现在网站的博客数据全部基于数据库查询，可以通过管理后台在线对网站的博客进行增、删、查、改。',
-            projectSkillStack: 'mongodb cookie flex布局 koa 接口设计 组件 ajax',
+            projectIntro: '现在网站的博客数据全部基于数据库查询，可以通过管理后台在线对网站的博客进行增、删、查、改。通过这个小项目让我对前后端的交互，接口的设计有了进一步的了解，因为其存在让操作博客变得大大轻松，所以现在更有兴趣去维护网站了！',
+            projectSkillStack: 'mongodb cookie flex布局 koa 接口设计 组件 ajax 前端性能优化',
             projectCodeLink: 'https://github.com/lixiaotiancai/my-website',
             projectOnline: 'http://39.108.226.142/management'
           }]

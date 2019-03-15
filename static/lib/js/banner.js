@@ -59,7 +59,7 @@
     for (var i = 0; i < len; i++) {
       innerImgHTML += '' +
         '<a href=' + content[i].href + ' class="banner-img-box">' +
-        '<img src=' + content[i].image + ' alt="banner_img"' + ' class="banner-img" />' +
+        '<img data-src=' + content[i].image + ' alt="banner_img"' + ' class="banner-img" />' +
         '</a>'
     }
 
@@ -88,6 +88,13 @@
 
     for (var i = 0; i < len; i++) {
       if (active === i) {
+        // add lazyload
+        var banner_image = this.first_image = this.image[i].querySelector('.banner-img')
+        banner_image.src = banner_image.getAttribute('data-src')
+        // add preload
+        var banner_image_second = this.image[(i + 1) < len ? (i + 1) : 0].querySelector('.banner-img')
+        banner_image_second.src = banner_image_second.getAttribute('data-src')
+
         this.pre = i
         this.image[i].classList.add('banner-img-active')
         this.point[i].classList.add('nav-point-active')
@@ -113,6 +120,13 @@
         this.point[i].classList.remove('nav-point-active')
       } else if (i == active) {
         this.pre = active
+
+        // add lazyload & preload
+        var banner_image_second = this.image[(i + 1) < len ? (i + 1) : 0].querySelector('.banner-img')
+        if (!banner_image_second.getAttribute('src')) {
+          banner_image_second.src = banner_image_second.getAttribute('data-src')
+        }
+
         this.image[i].classList.add('banner-img-appear')
         this.point[i].classList.add('nav-point-active')
         this.image[i].classList.remove('banner-img-hide')
@@ -141,7 +155,10 @@
       }
     }
 
-    createTimer()
+    // 当第一张图片加载完毕后 再开启计时器
+    this.first_image.onload = function() {
+      createTimer()
+    }
 
     this.banner.addEventListener('mouseenter', function(e) {
       e.stopPropagation()
