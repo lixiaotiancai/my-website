@@ -1,4 +1,5 @@
 const router = require('koa-router')()
+const md5 = require('blueimp-md5')
 
 let masterSession = {}
 
@@ -31,6 +32,11 @@ const UserModel = {
     const masterKey = ctx.cookies.get('masterKey')
 
     return (masterSession['master'] != undefined) && (masterSession['master'] == masterKey)
+  },
+
+  // 添加toker验证
+  getToken: ctx => {
+    return md5(masterSession['master'])
   }
 }
 

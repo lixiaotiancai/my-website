@@ -21,6 +21,7 @@ const Db = {
 
   find: async (options, callback) => {
     let result = await User.find(options, callback)
+
     return result
   },
 

@@ -10,7 +10,7 @@ const UserModel = {
 
     await Db.connect()
 
-    return await Db.find(options, function(err, docs) {
+    return Db.find(options, function(err, docs) {
       let userListCopy = [...userList]
 
       docs.forEach(user => {
@@ -31,11 +31,8 @@ const UserModel = {
       username: username
     }
 
-    await Db.connect()
-
     await Db.find(options, function(err, docs) {
-      if (err)
-        len = docs.length
+      len = docs.length
     })
 
     return len ? true : false
@@ -47,8 +44,6 @@ const UserModel = {
       username: username,
       password: password
     }
-
-    await Db.connect()
 
     await Db.find(options, function(err, docs) {
       len = docs.length
@@ -79,16 +74,14 @@ const UserModel = {
       if (userSession[key] === userkey) {
         username = key
 
-        let userDetail = await UserModel.getUserDetail(username)
-
-        return userDetail
+        return UserModel.getUserDetail(username)
       }
     }
 
     return null
   },
 
-  clearUserCookie: ctx => {
+  clearUserCookie: async ctx => {
     const username = ctx.cookies.get('username')
 
     userSession[username] = null
@@ -107,8 +100,6 @@ const UserModel = {
       username: decodeURIComponent(username)
     }
 
-    await Db.connect()
-
     await Db.find(options, function(err, docs) {
       userDetail = docs[0]
     })
@@ -121,8 +112,6 @@ const UserModel = {
       username: username,
       password: password
     }
-
-    await Db.connect()
 
     await Db.create(options)
   }

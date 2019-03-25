@@ -56,5 +56,23 @@ var COMMON = {
 
   qSA: function(selector) {
     return document.querySelectorAll(selector)
+  },
+
+  htmlEncode: function (str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+  },
+
+  htmlDecode : function (str) {
+    return String(str)
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
   }
 }

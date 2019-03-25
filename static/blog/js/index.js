@@ -10,11 +10,33 @@
   var blogContainer = T.qS('.blog-container')
   var fragment = document.createDocumentFragment()
 
+  // xss防范
+  function XSS (content) {
+    // xss config
+    var myxss
+
+    var XSS_CONFIG = {
+      allowTag: ['p', 'a', 'img', 'h1', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'span', 'div', 'pre', 'figure', 'table', 'tbody', 'th', 'tr', 'td', 'br', 'b', 'code', 'hr', 'header', 'footer', 'section', 'main', 'aside', 'article'],
+      allowAttr: ['src', 'href', 'alt', 'title', 'style', 'class'],
+      options: {
+        whiteList: {}
+      }
+    }
+
+    XSS_CONFIG.allowTag.forEach(tag => {
+        XSS_CONFIG.options.whiteList[tag] = XSS_CONFIG.allowAttr
+      })
+
+      myxss = new filterXSS.FilterXSS(XSS_CONFIG.options)
+
+      return myxss.process(content)
+  }
+
   function markdown2html(content) {
     var converter = new showdown.Converter()
     var html = converter.makeHtml(content)
 
-    return html
+    return XSS(html)
   }
 
   function codeHighLight() {
@@ -23,9 +45,10 @@
     })
   }
 
+  // xss 输出检查
   function render(article) {
     var id = article.id
-    var title = article.title
+    var title = XSS(article.title)
     var time = COMMON.formateDate('YYYY年MM月DD日 hh点mm分', article.date)
     var visit = article.visit
     var content = markdown2html(decodeURIComponent(article.content))
@@ -33,7 +56,7 @@
     var blogItem = T.cE('div')
     blogItem.classList.add('blog-item-wrapper')
 
-    var blogHref = '/blog/detail.html?id=' + article.id
+    var blogHref = encodeURI('/blog/detail.html?id=' + article.id)
 
     var renderHTML = '' +
       '<div class="blog-item-header">' +

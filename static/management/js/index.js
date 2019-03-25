@@ -22,20 +22,26 @@
     }
   }
 
+  // token校验
+  function getToken () {
+    return md5(COMMON.getCookieItem('masterKey'))
+  }
+
+  // 添加了xss输出检查
   function editBlog(id) {
     var xhr = new XMLHttpRequest
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         var detail = JSON.parse(xhr.responseText).detail[1]
-        var title = detail.title
-        var id = detail.id
+        var title = COMMON.htmlDecode(decodeURIComponent(detail.title))
+        var id = decodeURIComponent(detail.id)
         var visit = detail.visit
         var date = detail.date
         var category = detail.category
-        var cover = decodeURIComponent(detail.cover)
-        var intro = detail.intro
-        var content = decodeURIComponent(detail.content)
+        var cover = COMMON.htmlDecode(decodeURIComponent(detail.cover))
+        var intro = COMMON.htmlDecode(decodeURIComponent(detail.intro))
+        var content = COMMON.htmlDecode(decodeURIComponent(detail.content))
         window.__DATA_BASE_ID__ = detail._id
 
         COMMON.qS('.newblog-tt-input').value = title
@@ -46,6 +52,7 @@
         COMMON.qS('.newblog-content-input').innerText = content
 
         markdown2html()
+
         COMMON.qSA('pre').forEach(function(block) {
           hljs.highlightBlock(block)
         })
@@ -57,16 +64,17 @@
     xhr.send(null)
   }
 
+  // 添加了xss输入检查
   function postBlog() {
     var options = {
-      id: COMMON.qS('.newblog-id-input').value || 'undefined',
+      id: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-id-input').value)) || 'undefined',
       visit: 0,
       date: +new Date(),
-      title: COMMON.qS('.newblog-tt-input').value || 'undefined',
+      title: encodeURIComponent(COMMON.htmlEncode(COMMON.qS('.newblog-tt-input').value)) || 'undefined',
       category: COMMON.qS('.newblog-category-input').value,
-      cover: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-cover-input').value)) || '',
-      intro: COMMON.qS('.newblog-intro-input').value || '',
-      content: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-content-input').innerText))
+      cover: encodeURIComponent(COMMON.htmlEncode(COMMON.qS('.newblog-cover-input').value)) || '',
+      intro: encodeURIComponent(COMMON.htmlEncode(COMMON.qS('.newblog-intro-input').value)) || '',
+      content: encodeURIComponent(encodeURIComponent(XSS(COMMON.qS('.newblog-content-input').innerText)))
     }
 
     var send_options = JSON.stringify(options)
@@ -84,21 +92,22 @@
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
-    xhr.send('options=' + send_options)
+    xhr.send('options=' + send_options + '&token=' + getToken())
   }
 
+  // 添加了xss输入检查
   function updateBlog() {
     var options = {
       _id: window.__DATA_BASE_ID__
     }
 
     var new_options = {
-      id: COMMON.qS('.newblog-id-input').value,
-      title: COMMON.qS('.newblog-tt-input').value,
+      id: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-id-input').value)),
+      title: encodeURIComponent(COMMON.htmlEncode(COMMON.qS('.newblog-tt-input').value)),
       category: COMMON.qS('.newblog-category-input').value,
       cover: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-cover-input').value)),
-      intro: COMMON.qS('.newblog-intro-input').value,
-      content: encodeURIComponent(encodeURIComponent(COMMON.qS('.newblog-content-input').innerText))
+      intro: encodeURIComponent(COMMON.htmlEncode(COMMON.qS('.newblog-intro-input').value)),
+      content: encodeURIComponent(encodeURIComponent(XSS(COMMON.qS('.newblog-content-input').innerText)))
     }
 
     var send_options = JSON.stringify(options)
@@ -117,7 +126,7 @@
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
-    xhr.send('options=' + send_options + '&new_options=' + send_new_options)
+    xhr.send('options=' + send_options + '&new_options=' + send_new_options + '&token=' + getToken())
 
     window.__DATA_BASE_ID__ = null
   }
@@ -142,7 +151,7 @@
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
-    xhr.send('options=' + send_options)
+    xhr.send('options=' + send_options + '&token=' + getToken())
   }
 
   function getBlog() {
@@ -163,6 +172,7 @@
     xhr.send(null)
   }
 
+  // 添加了xss输入检查
   function renderManagementTable(articles, total) {
     // var title = articles.title
     // var date = COMMON.formateDate('YYYY/MM/DD', articles.date)
@@ -172,8 +182,8 @@
     var table = COMMON.qS('.management-table')
 
     for (var i = 0; i < total; i++) {
-      var id = articles[i].id
-      var title = articles[i].title
+      var id = encodeURIComponent(articles[i].id)
+      var title = decodeURIComponent(articles[i].title)
       var date = COMMON.formateDate('YYYY/MM/DD', articles[i].date)
       var visit = articles[i].visit
       var category = articles[i].category
@@ -202,12 +212,34 @@
     }
   }
 
+  // xss防范
+  function XSS (content) {
+    // xss config
+    var myxss
+
+    var XSS_CONFIG = {
+      allowTag: ['p', 'a', 'img', 'h1', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'span', 'div', 'pre', 'figure', 'table', 'tbody', 'th', 'tr', 'td', 'br', 'b', 'code', 'hr', 'header', 'footer', 'section', 'main', 'aside', 'article'],
+      allowAttr: ['src', 'href', 'alt', 'title', 'style', 'class'],
+      options: {
+        whiteList: {}
+      }
+    }
+
+    XSS_CONFIG.allowTag.forEach(tag => {
+        XSS_CONFIG.options.whiteList[tag] = XSS_CONFIG.allowAttr
+      })
+
+      myxss = new filterXSS.FilterXSS(XSS_CONFIG.options)
+
+      return myxss.process(content)
+  }
+
   function markdown2html() {
     var markdown = COMMON.qS('.newblog-content-input').innerText
     var converter = new showdown.Converter()
     var html = converter.makeHtml(markdown)
 
-    COMMON.qS('.newblog-preview').innerHTML = html
+    COMMON.qS('.newblog-preview').innerHTML = XSS(html)
   }
 
   function bindEvent() {

@@ -56,7 +56,7 @@ const ArticleModel = {
       let len = articles.length
 
       for (let i = 0; i < len; i++) {
-        if (articles[i].id === id) {
+        if (decodeURIComponent(articles[i].id) === id) {
           result = [articles[i - 1], articles[i], articles[i + 1]]
         }
       }

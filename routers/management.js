@@ -1,9 +1,23 @@
 const router = require('koa-router')()
 const userModel = require('../pub/model/management/user')
 
+const referer_reg = /^https?:\/\/localhost:3000/
+
 router.post('/login', async ctx => {
   const postData = ctx.request.body
+  const referer = ctx.request.header.referer
   let password = postData.password
+
+  // 添加referer验证
+  if (!referer_reg.test(referer)) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'referer不正确'
+    }
+
+    return
+  }
 
   if (userModel.isMaster(password)) {
     userModel.setMasterCookie(ctx)

@@ -3,16 +3,14 @@ const koaBody = require('koa-body')
 const fs = require('fs');
 const path = require('path');
 const url = require('url')
-const chat_online_db = require('./pub/model/chat_online/db')
 const util = require('./pub/util/index')
 const router = require('./routers/index');
 const bodyParser = require('koa-bodyparser');
+const limit = require('koa-limit');
 // const static = require('koa-static');
 
 const send = require('koa-send')
 const etag = require('etag')
-
-const limit = require('koa-limit')
 
 // WebSocketServer
 const WebSocket = require('ws')
@@ -26,16 +24,18 @@ app.use(koaBody({
   formLimit: '5mb'
 }))
 
+// DDOS
+app.use(limit({
+  limit: 500,
+  interval: 10 * 1000,
+  message: '你想干啥？？？？？？'
+}))
+
 
 const chat_online_wss = new WebSocket.Server({
   noServer: true
 })
 
-// app.use(async (ctx, next) => {
-//   await chat_online_db.connect()
-
-//   await next()
-// })
 
 const user_online = [] // 在线用户列表
 let notify = "" // 公告
@@ -147,12 +147,6 @@ app.use(bodyParser());
 //   static(path.join(__dirname, staticPath))
 // )
 
-// DDOS
-// app.use(limit({
-//   limit: 25,
-//   interval: 10 * 1000,
-//   message: '您的请求过于频繁'
-// }));
 
 // 设置router
 app.use(router.routes()).use(router.allowedMethods())

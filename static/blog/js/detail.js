@@ -3,11 +3,38 @@
 
   var artileId = COMMON.getUrlParam('id') || ''
 
+  // xss防范
+  function XSS (content) {
+    // xss config
+    var myxss
+
+    var XSS_CONFIG = {
+      allowTag: ['p', 'a', 'img', 'h1', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'span', 'div', 'pre', 'figure', 'table', 'tbody', 'th', 'tr', 'td', 'br', 'b', 'code', 'hr', 'header', 'footer', 'section', 'main', 'aside', 'article'],
+      allowAttr: ['src', 'href', 'alt', 'title', 'style', 'class'],
+      options: {
+        whiteList: {}
+      }
+    }
+
+    XSS_CONFIG.allowTag.forEach(tag => {
+        XSS_CONFIG.options.whiteList[tag] = XSS_CONFIG.allowAttr
+      })
+
+      myxss = new filterXSS.FilterXSS(XSS_CONFIG.options)
+
+      return myxss.process(content)
+  }
+
+  // token校验
+  function getToken () {
+    return md5(COMMON.getCookieItem('masterKey'))
+  }
+
   function markdown2html(content) {
     var converter = new showdown.Converter()
     var html = converter.makeHtml(content)
 
-    return html
+    return XSS(html)
   }
 
   function codeHighLight() {
@@ -18,8 +45,9 @@
 
   function addVisitCount(id, visit) {
     var options = {
-      id: id
+      id: encodeURIComponent(id)
     }
+
     var new_options = {
       visit: visit + 1
     }
@@ -31,19 +59,20 @@
     xhr.onreadystatechange = function() {}
     xhr.open('POST', '/blog/api/update_article')
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-    xhr.send('options=' + send_options + '&new_options=' + send_new_options)
+    xhr.send('options=' + send_options + '&new_options=' + send_new_options + '&token=' + getToken())
   }
 
+  // 输出检查
   function render(detail) {
     var id = detail[1].id || ''
-    var title = detail[1].title || ''
+    var title = XSS(decodeURIComponent(detail[1].title)) || ''
     var time = COMMON.formateDate('YYYY年MM月DD日 hh点mm分', detail[1].date)
-    var visit = detail[1].visit + 1
+    var visit = +detail[1].visit + 1
     var content = markdown2html(decodeURIComponent(detail[1].content)) || ''
     var pre_title = detail[0] ? detail[0].title : '没有了'
-    var pre_href = detail[0] ? ('/blog/detail.html?id=' + detail[0].id) : 'javascript:void(0)'
+    var pre_href = detail[0] ? encodeURI('/blog/detail.html?id=' + detail[0].id) : 'javascript:void(0)'
     var next_title = detail[2] ? detail[2].title : '没有了'
-    var next_href = detail[2] ? ('/blog/detail.html?id=' + detail[2].id) : 'javascript:void(0)'
+    var next_href = detail[2] ? encodeURI('/blog/detail.html?id=' + detail[2].id) : 'javascript:void(0)'
 
     var articleBox = document.createElement('div')
     articleBox.classList.add('article-box')

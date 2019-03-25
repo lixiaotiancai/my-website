@@ -1,10 +1,35 @@
 .management-container {
     width: 100%;
+    min-width: 800px;
     height: 100vh;
     background: #fff;
     position: relative;
 }
-
+.management-notify-wrapper {
+    width: 400px;
+    position: absolute;
+    left: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.management-notify-header {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0000;
+    font-size: 25px;
+}
+.management-notify-item {
+    width: 100%;
+    color: #111;
+    font-size: 18px;
+    text-indent: 2em;
+    margin-top: 15px;
+}
 .login-container {
     width: 400px;
     height: 300px;

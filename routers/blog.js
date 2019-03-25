@@ -1,7 +1,9 @@
 const router = require('koa-router')()
-
+const userModel = require('../pub/model/management/user')
 const articleModel = require('../pub/model/blog/article')
 const db = require('../pub/model/blog/db')
+
+const referer_reg = /^https?:\/\/localhost:3000/
 
 // this is a api for test
 router.get('/test_api', async ctx => {
@@ -15,7 +17,31 @@ router.post('/post_article', async ctx => {
   await db.connect()
 
   const postData = ctx.request.body
+  const referer = ctx.request.header.referer
   let options = postData.options
+  let token = postData.token
+
+  // 添加referer验证
+  if (!referer_reg.test(referer)) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'referer不正确'
+    }
+
+    return
+  }
+
+  // 添加token验证
+  if (!userModel.getToken() === token) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'token不正确'
+    }
+
+    return
+  }
 
   ctx.body = {
     success: true,
@@ -50,8 +76,21 @@ router.get('/get_articles', async (ctx) => {
  */
 router.get('/get_hot_articles', async ctx => {
   await db.connect()
+
+  const referer = ctx.request.header.referer
   const hotnum = +ctx.query.hotnum || 0
   let hot_articles = []
+
+  // 添加referer验证
+  if (!referer_reg.test(referer)) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'referer不正确'
+    }
+
+    return
+  }
 
   while (!hot_articles.length) {
     hot_articles = await articleModel.getHotArticles(hotnum)
@@ -90,8 +129,32 @@ router.post('/update_article', async ctx => {
   await db.connect()
 
   const postData = ctx.request.body
+  const referer = ctx.request.header.referer
   let options = postData.options
   let new_options = postData.new_options
+  let token = postData.token
+
+  // 添加referer验证
+  if (!referer_reg.test(referer)) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'referer不正确'
+    }
+
+    return
+  }
+
+  // 添加token验证
+  if (!userModel.getToken() === token) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'token不正确'
+    }
+
+    return
+  }
 
   ctx.body = {
     success: true,
@@ -108,7 +171,31 @@ router.post('/delete_article', async ctx => {
   await db.connect()
 
   const postData = ctx.request.body
+  const referer = ctx.request.header.referer
   let options = postData.options
+  let token = postData.token
+
+  // 添加referer验证
+  if (!referer_reg.test(referer)) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'referer不正确'
+    }
+
+    return
+  }
+
+  // 添加token验证
+  if (!userModel.getToken() === token) {
+    ctx.body = {
+      success: false,
+      retcode: -1,
+      message: 'token不正确'
+    }
+
+    return
+  }
 
   ctx.body = {
     success: true,
